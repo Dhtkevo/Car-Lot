@@ -1,9 +1,11 @@
 using KevinMaduProject1.Model;
+using KevinMaduProject1.View;
 
 namespace KevinMaduProject1
 {
     public partial class CarLotForm : Form
     {
+        private AddCarForm addCarForm;
 
         public CarLot Lot;
         public CarLotForm()
@@ -19,7 +21,8 @@ namespace KevinMaduProject1
 
         private void addCarMenuItem_Click(object sender, EventArgs e)
         {
-            
+            addCarForm = new AddCarForm();
+            addCarForm.ShowDialog();
         }
 
         

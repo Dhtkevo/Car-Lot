@@ -115,53 +115,50 @@
             addCarBtn.TabIndex = 8;
             addCarBtn.Text = "Add Car";
             addCarBtn.UseVisualStyleBackColor = true;
+            addCarBtn.Click += addCarBtn_Click;
             // 
             // carMakeErrorLbl
             // 
-            carMakeErrorLbl.AutoSize = true;
             carMakeErrorLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             carMakeErrorLbl.ForeColor = Color.Red;
-            carMakeErrorLbl.Location = new Point(307, 69);
+            carMakeErrorLbl.Location = new Point(307, 66);
             carMakeErrorLbl.Name = "carMakeErrorLbl";
-            carMakeErrorLbl.Size = new Size(82, 15);
+            carMakeErrorLbl.Size = new Size(142, 40);
             carMakeErrorLbl.TabIndex = 9;
-            carMakeErrorLbl.Text = "Invalid Make!";
+            carMakeErrorLbl.Text = "Invalid Make! Only letters are allowed!";
             carMakeErrorLbl.Visible = false;
             // 
             // carModelErrorLbl
             // 
-            carModelErrorLbl.AutoSize = true;
             carModelErrorLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             carModelErrorLbl.ForeColor = Color.Red;
             carModelErrorLbl.Location = new Point(307, 118);
             carModelErrorLbl.Name = "carModelErrorLbl";
-            carModelErrorLbl.Size = new Size(86, 15);
+            carModelErrorLbl.Size = new Size(131, 43);
             carModelErrorLbl.TabIndex = 10;
-            carModelErrorLbl.Text = "Invalid Model!";
+            carModelErrorLbl.Text = "Invalid Model! Only letters are allowed!";
             carModelErrorLbl.Visible = false;
             // 
             // carMpgErrorLbl
             // 
-            carMpgErrorLbl.AutoSize = true;
             carMpgErrorLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             carMpgErrorLbl.ForeColor = Color.Red;
             carMpgErrorLbl.Location = new Point(307, 170);
             carMpgErrorLbl.Name = "carMpgErrorLbl";
-            carMpgErrorLbl.Size = new Size(78, 15);
+            carMpgErrorLbl.Size = new Size(131, 40);
             carMpgErrorLbl.TabIndex = 11;
-            carMpgErrorLbl.Text = "Invalid MPG!";
+            carMpgErrorLbl.Text = "Must follow \"XX.XX\" Format! Digits Only.";
             carMpgErrorLbl.Visible = false;
             // 
             // carPriceErrorLbl
             // 
-            carPriceErrorLbl.AutoSize = true;
             carPriceErrorLbl.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             carPriceErrorLbl.ForeColor = Color.Red;
             carPriceErrorLbl.Location = new Point(307, 219);
             carPriceErrorLbl.Name = "carPriceErrorLbl";
-            carPriceErrorLbl.Size = new Size(79, 15);
+            carPriceErrorLbl.Size = new Size(131, 37);
             carPriceErrorLbl.TabIndex = 12;
-            carPriceErrorLbl.Text = "Invalid Price!";
+            carPriceErrorLbl.Text = "Must follow \"XX.XX\" Format! Digits only.";
             carPriceErrorLbl.Visible = false;
             // 
             // AddCarForm
