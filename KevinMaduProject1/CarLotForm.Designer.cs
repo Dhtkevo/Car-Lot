@@ -30,6 +30,11 @@
         {
             mainMenuStrip = new MenuStrip();
             addCarMenuItem = new ToolStripMenuItem();
+            shopperBtn = new Button();
+            shopperNameInfoLbl = new Label();
+            shopperMoneyInfoLbl = new Label();
+            shopperNameLbl = new Label();
+            shopperMoneyLbl = new Label();
             mainMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,11 +54,64 @@
             addCarMenuItem.Text = "Add Car";
             addCarMenuItem.Click += addCarMenuItem_Click;
             // 
+            // shopperBtn
+            // 
+            shopperBtn.Location = new Point(347, 198);
+            shopperBtn.Name = "shopperBtn";
+            shopperBtn.Size = new Size(98, 23);
+            shopperBtn.TabIndex = 1;
+            shopperBtn.Text = "Enter Shopper";
+            shopperBtn.UseVisualStyleBackColor = true;
+            shopperBtn.Click += shopperBtn_Click;
+            // 
+            // shopperNameInfoLbl
+            // 
+            shopperNameInfoLbl.AutoSize = true;
+            shopperNameInfoLbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            shopperNameInfoLbl.Location = new Point(79, 37);
+            shopperNameInfoLbl.Name = "shopperNameInfoLbl";
+            shopperNameInfoLbl.Size = new Size(157, 28);
+            shopperNameInfoLbl.TabIndex = 2;
+            shopperNameInfoLbl.Text = "Shopper Name:";
+            // 
+            // shopperMoneyInfoLbl
+            // 
+            shopperMoneyInfoLbl.AutoSize = true;
+            shopperMoneyInfoLbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            shopperMoneyInfoLbl.Location = new Point(446, 37);
+            shopperMoneyInfoLbl.Name = "shopperMoneyInfoLbl";
+            shopperMoneyInfoLbl.Size = new Size(176, 28);
+            shopperMoneyInfoLbl.TabIndex = 3;
+            shopperMoneyInfoLbl.Text = "Money Available:";
+            // 
+            // shopperNameLbl
+            // 
+            shopperNameLbl.AutoSize = true;
+            shopperNameLbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            shopperNameLbl.Location = new Point(242, 37);
+            shopperNameLbl.Name = "shopperNameLbl";
+            shopperNameLbl.Size = new Size(0, 28);
+            shopperNameLbl.TabIndex = 4;
+            // 
+            // shopperMoneyLbl
+            // 
+            shopperMoneyLbl.AutoSize = true;
+            shopperMoneyLbl.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            shopperMoneyLbl.Location = new Point(624, 37);
+            shopperMoneyLbl.Name = "shopperMoneyLbl";
+            shopperMoneyLbl.Size = new Size(0, 28);
+            shopperMoneyLbl.TabIndex = 5;
+            // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(shopperMoneyLbl);
+            Controls.Add(shopperNameLbl);
+            Controls.Add(shopperMoneyInfoLbl);
+            Controls.Add(shopperNameInfoLbl);
+            Controls.Add(shopperBtn);
             Controls.Add(mainMenuStrip);
             MainMenuStrip = mainMenuStrip;
             Name = "CarLotForm";
@@ -68,5 +126,10 @@
 
         private MenuStrip mainMenuStrip;
         private ToolStripMenuItem addCarMenuItem;
+        private Button shopperBtn;
+        private Label shopperNameInfoLbl;
+        private Label shopperMoneyInfoLbl;
+        private Label shopperNameLbl;
+        private Label shopperMoneyLbl;
     }
 }

@@ -10,6 +10,7 @@ namespace KevinMaduProject1
     public partial class CarLotForm : Form
     {
         private AddCarForm addCarForm;
+        private CreateShopperForm shopperForm;
 
         /// <summary>
         /// The car lot
@@ -33,9 +34,13 @@ namespace KevinMaduProject1
             Lot.Inventory.Add(addCarForm.CreatedCar);
         }
 
-        
+        private void shopperBtn_Click(object sender, EventArgs e)
+        {
+            shopperForm = new CreateShopperForm();
+            shopperForm.ShowDialog();
 
-
-
+            shopperNameLbl.Text = shopperForm.shopper.Name;
+            shopperMoneyLbl.Text = shopperForm.shopper.MoneyAvailable.ToString();
+        }
     }
 }
