@@ -1,5 +1,6 @@
 using KevinMaduProject1.Model;
 using KevinMaduProject1.View;
+using System.Security.Policy;
 
 namespace KevinMaduProject1
 {
@@ -40,7 +41,11 @@ namespace KevinMaduProject1
             shopperForm.ShowDialog();
 
             shopperNameLbl.Text = shopperForm.shopper.Name;
-            shopperMoneyLbl.Text = shopperForm.shopper.MoneyAvailable.ToString();
+
+            var money = shopperForm.shopper.MoneyAvailable;
+            string mstring = String.Format("{0:C}", money);
+
+            shopperMoneyLbl.Text = mstring;
         }
     }
 }

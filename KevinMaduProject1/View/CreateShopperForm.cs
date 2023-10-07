@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
 using KevinMaduProject1.Model;
 
 namespace KevinMaduProject1.View
 {
+    /// <summary>
+    /// Class for shopper form
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class CreateShopperForm : Form
     {
+        /// <summary>
+        /// The shopper
+        /// </summary>
         public Shopper shopper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateShopperForm"/> class.
+        /// </summary>
         public CreateShopperForm()
         {
             InitializeComponent();
