@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
 using KevinMaduProject1.Model;
 
 namespace KevinMaduProject1.View
 {
+    /// <summary>
+    /// Class representing the form that adds car to inventory
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class AddCarForm : Form
     {
+
+        /// <summary>
+        /// The created car
+        /// </summary>
         public Car CreatedCar;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddCarForm"/> class.
+        /// </summary>
         public AddCarForm()
         {
             InitializeComponent();
@@ -51,6 +53,8 @@ namespace KevinMaduProject1.View
             if (!carMakeErrorLbl.Visible && !carModelErrorLbl.Visible && !carMpgErrorLbl.Visible &&
                 !carPriceErrorLbl.Visible)
             {
+                CreatedCar = new Car(carMakeTxtbox.Text, carModelTxtbox.Text,
+                    Decimal.Parse(carMpgTxtbox.Text), Decimal.Parse(carPriceTxtbox.Text));
                 return true;
             }
 

@@ -3,26 +3,34 @@ using KevinMaduProject1.View;
 
 namespace KevinMaduProject1
 {
+    /// <summary>
+    /// Car Lot Form
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class CarLotForm : Form
     {
         private AddCarForm addCarForm;
 
+        /// <summary>
+        /// The car lot
+        /// </summary>
         public CarLot Lot;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CarLotForm"/> class.
+        /// </summary>
         public CarLotForm()
         {
             InitializeComponent();
             Lot = new CarLot();
         }
 
-        // Add menu item to form that has functionality to open a dialog box that asks for details about
-        // a car and adds it to current inventory of cars. 
-        // The dialog box should make sure the car details are valid
-        // before submitting entered car info
-
         private void addCarMenuItem_Click(object sender, EventArgs e)
         {
             addCarForm = new AddCarForm();
             addCarForm.ShowDialog();
+
+            Lot.Inventory.Add(addCarForm.CreatedCar);
         }
 
         
