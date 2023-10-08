@@ -102,5 +102,10 @@
             Mpg = mpg;
             Price = price;
         }
+
+        public override string ToString()
+        {
+            return $"{Make} {Model} {String.Format("{0:C}", Price)} {string.Format("{0:0.0}", Mpg)}mpg";
+        }
     }
 }

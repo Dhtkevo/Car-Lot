@@ -189,7 +189,7 @@
         /// <returns></returns>
         public decimal? GetTotalCostOfPurchase(Car car)
         {
-            return car.Price * TaxRate;
+            return (car.Price) + ((TaxRate/100) * car.Price);
         }
 
         /// <summary>

@@ -35,6 +35,11 @@
             shopperMoneyInfoLbl = new Label();
             shopperNameLbl = new Label();
             shopperMoneyLbl = new Label();
+            carsListbox = new ListBox();
+            purchaseCarBtn = new Button();
+            notEnoughFundsLbl = new Label();
+            successfulCarPurchaseLbl = new Label();
+            nullShopperLbl = new Label();
             mainMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +61,7 @@
             // 
             // shopperBtn
             // 
-            shopperBtn.Location = new Point(347, 198);
+            shopperBtn.Location = new Point(231, 342);
             shopperBtn.Name = "shopperBtn";
             shopperBtn.Size = new Size(98, 23);
             shopperBtn.TabIndex = 1;
@@ -102,11 +107,70 @@
             shopperMoneyLbl.Size = new Size(0, 28);
             shopperMoneyLbl.TabIndex = 5;
             // 
+            // carsListbox
+            // 
+            carsListbox.FormattingEnabled = true;
+            carsListbox.ItemHeight = 15;
+            carsListbox.Location = new Point(231, 186);
+            carsListbox.Name = "carsListbox";
+            carsListbox.Size = new Size(226, 139);
+            carsListbox.TabIndex = 6;
+            // 
+            // purchaseCarBtn
+            // 
+            purchaseCarBtn.Location = new Point(359, 342);
+            purchaseCarBtn.Name = "purchaseCarBtn";
+            purchaseCarBtn.Size = new Size(98, 23);
+            purchaseCarBtn.TabIndex = 7;
+            purchaseCarBtn.Text = "Purchase Car";
+            purchaseCarBtn.UseVisualStyleBackColor = true;
+            purchaseCarBtn.Click += purchaseCarBtn_Click;
+            // 
+            // notEnoughFundsLbl
+            // 
+            notEnoughFundsLbl.AutoSize = true;
+            notEnoughFundsLbl.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            notEnoughFundsLbl.ForeColor = Color.Red;
+            notEnoughFundsLbl.Location = new Point(129, 115);
+            notEnoughFundsLbl.Name = "notEnoughFundsLbl";
+            notEnoughFundsLbl.Size = new Size(469, 37);
+            notEnoughFundsLbl.TabIndex = 8;
+            notEnoughFundsLbl.Text = "Insufficient funds for this purchase!";
+            notEnoughFundsLbl.Visible = false;
+            // 
+            // successfulCarPurchaseLbl
+            // 
+            successfulCarPurchaseLbl.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            successfulCarPurchaseLbl.ForeColor = Color.LimeGreen;
+            successfulCarPurchaseLbl.Location = new Point(0, 83);
+            successfulCarPurchaseLbl.Name = "successfulCarPurchaseLbl";
+            successfulCarPurchaseLbl.Size = new Size(800, 100);
+            successfulCarPurchaseLbl.TabIndex = 9;
+            successfulCarPurchaseLbl.Text = "Successful Purch";
+            successfulCarPurchaseLbl.Visible = false;
+            // 
+            // nullShopperLbl
+            // 
+            nullShopperLbl.AutoSize = true;
+            nullShopperLbl.Font = new Font("Segoe UI Black", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            nullShopperLbl.ForeColor = Color.Red;
+            nullShopperLbl.Location = new Point(14, 380);
+            nullShopperLbl.Name = "nullShopperLbl";
+            nullShopperLbl.Size = new Size(774, 37);
+            nullShopperLbl.TabIndex = 10;
+            nullShopperLbl.Text = "Enter Shopper Information Before Attmpting A Purchase";
+            nullShopperLbl.Visible = false;
+            // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(nullShopperLbl);
+            Controls.Add(successfulCarPurchaseLbl);
+            Controls.Add(notEnoughFundsLbl);
+            Controls.Add(purchaseCarBtn);
+            Controls.Add(carsListbox);
             Controls.Add(shopperMoneyLbl);
             Controls.Add(shopperNameLbl);
             Controls.Add(shopperMoneyInfoLbl);
@@ -131,5 +195,10 @@
         private Label shopperMoneyInfoLbl;
         private Label shopperNameLbl;
         private Label shopperMoneyLbl;
+        private ListBox carsListbox;
+        private Button purchaseCarBtn;
+        private Label notEnoughFundsLbl;
+        private Label successfulCarPurchaseLbl;
+        private Label nullShopperLbl;
     }
 }

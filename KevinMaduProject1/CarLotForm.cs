@@ -25,6 +25,7 @@ namespace KevinMaduProject1
         {
             InitializeComponent();
             Lot = new CarLot();
+            carsListbox.DataSource = Lot.Inventory;
         }
 
         private void addCarMenuItem_Click(object sender, EventArgs e)
@@ -41,11 +42,46 @@ namespace KevinMaduProject1
             shopperForm.ShowDialog();
 
             shopperNameLbl.Text = shopperForm.shopper.Name;
+            nullShopperLbl.Visible = false;
 
+            UpdateMoneyAvailable();
+        }
+
+        private void UpdateMoneyAvailable()
+        {
             var money = shopperForm.shopper.MoneyAvailable;
             string mstring = String.Format("{0:C}", money);
 
             shopperMoneyLbl.Text = mstring;
+        }
+
+        private void purchaseCarBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(shopperNameLbl.Text))
+            {
+                nullShopperLbl.Visible = true;
+                return;
+            }
+
+            var selectedCar = (Car)carsListbox.SelectedItem;
+
+
+            if (!shopperForm.shopper.CanPurchase(selectedCar))
+            {
+                successfulCarPurchaseLbl.Visible = false;
+                notEnoughFundsLbl.Visible = true;
+                return;
+            }
+            else
+            {
+                notEnoughFundsLbl.Visible = false;
+                successfulCarPurchaseLbl.Text = $"Successful Purchase! Product Details: {selectedCar.ToString()} |" +
+                                                $" Total After Tax: {String.Format("{0:C}", Lot.GetTotalCostOfPurchase(selectedCar))}";
+                successfulCarPurchaseLbl.Visible = true;
+                shopperForm.shopper.PurchaseCar(selectedCar);
+
+                UpdateMoneyAvailable();
+            }
         }
     }
 }
