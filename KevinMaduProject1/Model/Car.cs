@@ -103,6 +103,12 @@
             Price = price;
         }
 
+        /// <summary>
+        /// Returns string representation of Car.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return $"{Make} {Model} {String.Format("{0:C}", Price)} {string.Format("{0:0.0}", Mpg)}mpg";

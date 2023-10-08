@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using KevinMaduProject1.Model;
+﻿using KevinMaduProject1.Model;
 
 namespace KevinMaduProject1.View
 {
@@ -17,34 +8,42 @@ namespace KevinMaduProject1.View
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class DetailedInventoryForm : Form
     {
-        public CarLot summaryCars;
+        /// <summary>
+        /// The inventory of cars to be summarized
+        /// </summary>
+        public CarLot SummaryCars;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DetailedInventoryForm"/> class.
+        /// </summary>
+        /// <param name="cars">The cars.</param>
         public DetailedInventoryForm(CarLot cars)
         {
             InitializeComponent();
-            summaryCars = cars;
+            SummaryCars = cars;
 
             PopulateCarSummary();
         }
 
         private void PopulateCarSummary()
         {
-            summaryTextbox.Text = $"Inventory of {summaryCars.Count} cars. {Environment.NewLine}";
-            foreach (Car car in summaryCars.Inventory)
+            summaryTextbox.Text = $"Inventory of {SummaryCars.Count} cars. {Environment.NewLine}";
+            foreach (Car car in SummaryCars.Inventory)
             {
                 summaryTextbox.Text += $"{car.ToString()} {Environment.NewLine}";
             }
 
             summaryTextbox.Text += $"{Environment.NewLine} Most Expensive: {Environment.NewLine} " +
-                                   $"{summaryCars.FindMostExpensiveCar().ToString()} {Environment.NewLine}";
+                                   $"{SummaryCars.FindMostExpensiveCar().ToString()} {Environment.NewLine}";
 
             summaryTextbox.Text += $"{Environment.NewLine} Least Expensive: {Environment.NewLine} " +
-                                   $"{summaryCars.FindLeastExpensiveCar().ToString()} {Environment.NewLine}";
+                                   $"{SummaryCars.FindLeastExpensiveCar().ToString()} {Environment.NewLine}";
 
             summaryTextbox.Text += $"{Environment.NewLine} Best MPG: {Environment.NewLine} " +
-                                   $"{summaryCars.FindBestMPGCar().ToString()} {Environment.NewLine}";
+                                   $"{SummaryCars.FindBestMPGCar().ToString()} {Environment.NewLine}";
 
             summaryTextbox.Text += $"{Environment.NewLine} Worst MPG: {Environment.NewLine} " +
-                                   $"{summaryCars.FindWorstMPG().ToString()} {Environment.NewLine}";
+                                   $"{SummaryCars.FindWorstMPG().ToString()} {Environment.NewLine}";
         }
     }
 }

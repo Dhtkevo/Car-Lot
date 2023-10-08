@@ -1,6 +1,5 @@
 using KevinMaduProject1.Model;
 using KevinMaduProject1.View;
-using System.Security.Policy;
 
 namespace KevinMaduProject1
 {
@@ -10,9 +9,9 @@ namespace KevinMaduProject1
     /// <seealso cref="System.Windows.Forms.Form" />
     public partial class CarLotForm : Form
     {
-        private AddCarForm addCarForm;
-        private CreateShopperForm shopperForm;
-        private DetailedInventoryForm summaryForm;
+        private AddCarForm _addCarForm;
+        private CreateShopperForm _shopperForm;
+        private DetailedInventoryForm _summaryForm;
 
         /// <summary>
         /// The car lot
@@ -31,18 +30,18 @@ namespace KevinMaduProject1
 
         private void addCarMenuItem_Click(object sender, EventArgs e)
         {
-            addCarForm = new AddCarForm();
-            addCarForm.ShowDialog();
+            _addCarForm = new AddCarForm();
+            _addCarForm.ShowDialog();
 
-            Lot.Inventory.Add(addCarForm.CreatedCar);
+            Lot.Inventory.Add(_addCarForm.CreatedCar);
         }
 
         private void shopperBtn_Click(object sender, EventArgs e)
         {
-            shopperForm = new CreateShopperForm();
-            shopperForm.ShowDialog();
+            _shopperForm = new CreateShopperForm();
+            _shopperForm.ShowDialog();
 
-            shopperNameLbl.Text = shopperForm.shopper.Name;
+            shopperNameLbl.Text = _shopperForm.CurrentShopper.Name;
             nullShopperLbl.Visible = false;
 
             UpdateMoneyAvailable();
@@ -50,7 +49,7 @@ namespace KevinMaduProject1
 
         private void UpdateMoneyAvailable()
         {
-            var money = shopperForm.shopper.MoneyAvailable;
+            var money = _shopperForm.CurrentShopper.MoneyAvailable;
             string mstring = String.Format("{0:C}", money);
 
             shopperMoneyLbl.Text = mstring;
@@ -67,7 +66,7 @@ namespace KevinMaduProject1
             var selectedCar = (Car)carsListbox.SelectedItem;
 
 
-            if (!shopperForm.shopper.CanPurchase(selectedCar))
+            if (!_shopperForm.CurrentShopper.CanPurchase(selectedCar))
             {
                 successfulCarPurchaseLbl.Visible = false;
                 notEnoughFundsLbl.Visible = true;
@@ -79,7 +78,7 @@ namespace KevinMaduProject1
                 successfulCarPurchaseLbl.Text = $"Successful Purchase! Product Details: {selectedCar.ToString()} |" +
                                                 $" Total After Tax: {String.Format("{0:C}", Lot.GetTotalCostOfPurchase(selectedCar))}";
                 successfulCarPurchaseLbl.Visible = true;
-                shopperForm.shopper.PurchaseCar(selectedCar);
+                _shopperForm.CurrentShopper.PurchaseCar(selectedCar);
 
                 UpdateMoneyAvailable();
             }
@@ -87,8 +86,8 @@ namespace KevinMaduProject1
 
         private void detailedInventoryBtn_Click(object sender, EventArgs e)
         {
-            summaryForm = new DetailedInventoryForm(Lot);
-            summaryForm.ShowDialog();
+            _summaryForm = new DetailedInventoryForm(Lot);
+            _summaryForm.ShowDialog();
             
             
         }

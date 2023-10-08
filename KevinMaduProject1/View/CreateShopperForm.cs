@@ -12,7 +12,7 @@ namespace KevinMaduProject1.View
         /// <summary>
         /// The shopper
         /// </summary>
-        public Shopper shopper;
+        public Shopper CurrentShopper;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateShopperForm"/> class.
@@ -28,7 +28,7 @@ namespace KevinMaduProject1.View
 
             if (!createShopperNameErrorLbl.Visible && !createShopperMoneyErrorLbl.Visible)
             {
-                shopper = new Shopper(createShopperNameTxtbox.Text, Decimal.Parse(createShopperMoneyTxtbox.Text));
+                CurrentShopper = new Shopper(createShopperNameTxtbox.Text, Decimal.Parse(createShopperMoneyTxtbox.Text));
                 Close();
             }
         }
