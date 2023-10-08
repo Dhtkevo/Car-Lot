@@ -40,6 +40,7 @@
             notEnoughFundsLbl = new Label();
             successfulCarPurchaseLbl = new Label();
             nullShopperLbl = new Label();
+            detailedInventoryBtn = new Button();
             mainMenuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -118,7 +119,7 @@
             // 
             // purchaseCarBtn
             // 
-            purchaseCarBtn.Location = new Point(359, 342);
+            purchaseCarBtn.Location = new Point(335, 342);
             purchaseCarBtn.Name = "purchaseCarBtn";
             purchaseCarBtn.Size = new Size(98, 23);
             purchaseCarBtn.TabIndex = 7;
@@ -161,11 +162,22 @@
             nullShopperLbl.Text = "Enter Shopper Information Before Attmpting A Purchase";
             nullShopperLbl.Visible = false;
             // 
+            // detailedInventoryBtn
+            // 
+            detailedInventoryBtn.Location = new Point(439, 342);
+            detailedInventoryBtn.Name = "detailedInventoryBtn";
+            detailedInventoryBtn.Size = new Size(119, 23);
+            detailedInventoryBtn.TabIndex = 11;
+            detailedInventoryBtn.Text = "Detailed Inventory";
+            detailedInventoryBtn.UseVisualStyleBackColor = true;
+            detailedInventoryBtn.Click += detailedInventoryBtn_Click;
+            // 
             // CarLotForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(detailedInventoryBtn);
             Controls.Add(nullShopperLbl);
             Controls.Add(successfulCarPurchaseLbl);
             Controls.Add(notEnoughFundsLbl);
@@ -200,5 +212,6 @@
         private Label notEnoughFundsLbl;
         private Label successfulCarPurchaseLbl;
         private Label nullShopperLbl;
+        private Button detailedInventoryBtn;
     }
 }

@@ -12,6 +12,7 @@ namespace KevinMaduProject1
     {
         private AddCarForm addCarForm;
         private CreateShopperForm shopperForm;
+        private DetailedInventoryForm summaryForm;
 
         /// <summary>
         /// The car lot
@@ -82,6 +83,14 @@ namespace KevinMaduProject1
 
                 UpdateMoneyAvailable();
             }
+        }
+
+        private void detailedInventoryBtn_Click(object sender, EventArgs e)
+        {
+            summaryForm = new DetailedInventoryForm(Lot);
+            summaryForm.ShowDialog();
+            
+            
         }
     }
 }
