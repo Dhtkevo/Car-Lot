@@ -9,3 +9,7 @@ Steps to reproduce bug...
 
 I handled this bug by checking for a null shopper, and if the shopper is null then 
 display a message prompting the user to re-enter shopper information.
+
+**GIT**
+I've been pushing my commits to a github repo so i'm not sure if Visual studio will allow you to see my commit history.
+I plan on uploading a screenshot of my commit history on github just in case.
