@@ -26,6 +26,7 @@ namespace KevinMaduProject1.View
         {
             ValidateShopperForm();
 
+            
             if (!createShopperNameErrorLbl.Visible && !createShopperMoneyErrorLbl.Visible)
             {
                 CurrentShopper = new Shopper(createShopperNameTxtbox.Text, Decimal.Parse(createShopperMoneyTxtbox.Text));

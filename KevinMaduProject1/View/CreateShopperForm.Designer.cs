@@ -40,11 +40,11 @@
             // createShopperNameLbl
             // 
             createShopperNameLbl.AutoSize = true;
-            createShopperNameLbl.Location = new Point(146, 117);
+            createShopperNameLbl.Location = new Point(133, 117);
             createShopperNameLbl.Name = "createShopperNameLbl";
-            createShopperNameLbl.Size = new Size(89, 15);
+            createShopperNameLbl.Size = new Size(114, 15);
             createShopperNameLbl.TabIndex = 0;
-            createShopperNameLbl.Text = "Shopper Name:";
+            createShopperNameLbl.Text = "Shopper First Name:";
             // 
             // createShopperMoneyLbl
             // 

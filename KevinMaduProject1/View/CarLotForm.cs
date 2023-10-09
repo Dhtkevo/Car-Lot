@@ -33,7 +33,14 @@ namespace KevinMaduProject1
             _addCarForm = new AddCarForm();
             _addCarForm.ShowDialog();
 
-            Lot.Inventory.Add(_addCarForm.CreatedCar);
+            if (_addCarForm.CreatedCar != null)
+            {
+                Lot.Inventory.Add(_addCarForm.CreatedCar);
+
+                carsListbox.DataSource = null;
+                carsListbox.DataSource = Lot.Inventory;
+            }
+
         }
 
         private void shopperBtn_Click(object sender, EventArgs e)
@@ -41,10 +48,15 @@ namespace KevinMaduProject1
             _shopperForm = new CreateShopperForm();
             _shopperForm.ShowDialog();
 
-            shopperNameLbl.Text = _shopperForm.CurrentShopper.Name;
-            nullShopperLbl.Visible = false;
+            if (_shopperForm.CurrentShopper != null)
+            {
+                shopperNameLbl.Text = _shopperForm.CurrentShopper.Name;
+                nullShopperLbl.Visible = false;
 
-            UpdateMoneyAvailable();
+                UpdateMoneyAvailable();
+            }
+
+
         }
 
         private void UpdateMoneyAvailable()
@@ -65,6 +77,15 @@ namespace KevinMaduProject1
 
             var selectedCar = (Car)carsListbox.SelectedItem;
 
+            if (_shopperForm.CurrentShopper == null)
+            {
+                nullShopperLbl.Visible = true;
+                return;
+            }
+            else
+            {
+                nullShopperLbl.Visible = false;
+            }
 
             if (!_shopperForm.CurrentShopper.CanPurchase(selectedCar))
             {
@@ -88,8 +109,8 @@ namespace KevinMaduProject1
         {
             _summaryForm = new DetailedInventoryForm(Lot);
             _summaryForm.ShowDialog();
-            
-            
+
+
         }
     }
 }

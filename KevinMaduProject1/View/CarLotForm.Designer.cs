@@ -56,6 +56,7 @@
             // addCarMenuItem
             // 
             addCarMenuItem.Name = "addCarMenuItem";
+            addCarMenuItem.ShortcutKeys = Keys.Alt | Keys.A;
             addCarMenuItem.Size = new Size(62, 20);
             addCarMenuItem.Text = "Add Car";
             addCarMenuItem.Click += addCarMenuItem_Click;
@@ -155,11 +156,11 @@
             nullShopperLbl.AutoSize = true;
             nullShopperLbl.Font = new Font("Segoe UI Black", 20F, FontStyle.Regular, GraphicsUnit.Point);
             nullShopperLbl.ForeColor = Color.Red;
-            nullShopperLbl.Location = new Point(14, 380);
+            nullShopperLbl.Location = new Point(114, 381);
             nullShopperLbl.Name = "nullShopperLbl";
-            nullShopperLbl.Size = new Size(774, 37);
+            nullShopperLbl.Size = new Size(508, 37);
             nullShopperLbl.TabIndex = 10;
-            nullShopperLbl.Text = "Enter Shopper Information Before Attmpting A Purchase";
+            nullShopperLbl.Text = "Enter/Re-enter shopper information!";
             nullShopperLbl.Visible = false;
             // 
             // detailedInventoryBtn

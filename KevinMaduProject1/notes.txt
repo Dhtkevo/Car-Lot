@@ -1,0 +1,11 @@
+﻿There are no known/unhandled bugs or missing functionality in this project.
+
+There is one minor bug that would cause the shopper to become null and crash the program.
+
+Steps to reproduce bug...
+1. Enter information for a shopper
+2. Open shopper form and close it without entering information/submitting the form.
+3. Attempt to purchase a car
+
+I handled this bug by checking for a null shopper, and if the shopper is null then 
+display a message prompting the user to re-enter shopper information.
